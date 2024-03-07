@@ -72,7 +72,7 @@ const Form = () => {
             max="100"
             step="1"
             placeholder="Ваше имя"
-            className={classes.input}
+            className={classes.input_range}
             required
             onChange={(e) => setSlider(e.target.value)}
           />
