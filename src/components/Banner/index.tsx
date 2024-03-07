@@ -1,5 +1,5 @@
 import classes from "./styles.module.scss";
-const imageUrl = "/images/c9dd3b24db3607d51897293faba562d9";
+const imageUrl = "./images/c9dd3b24db3607d51897293faba562d9";
 
 import Button from "@/components/Button";
 
@@ -27,7 +27,7 @@ const Banner = () => {
             </ul>
           </div>
           <footer className={classes.buttons}>
-            <Button onClick={() => (window.location.href = "/#order")}>
+            <Button onClick={() => (window.location.href = "#order")}>
               заказать
             </Button>
             <Button variant={"white"}>подробнее</Button>
