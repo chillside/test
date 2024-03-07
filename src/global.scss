@@ -9,6 +9,7 @@
 
   background-color: var(--color-background);
   color: #fff;
+  scroll-behavior: smooth;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -35,6 +36,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
 }
 .container {
   width: 100%;
@@ -43,4 +45,5 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }

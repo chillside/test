@@ -1,34 +1,48 @@
 import classes from "./styled.module.scss";
 
 import IconSearch from "@/assets/icon/search.svg?react";
+import IconPercent from "@/assets/icon/percent.svg?react";
+import IconFile from "@/assets/icon/file.svg?react";
+import IconMessage from "@/assets/icon/message.svg?react";
+import IconMoney from "@/assets/icon/money.svg?react";
+
+import Form from "@/components/Form";
 
 const STEPS = [
   { text: "Lorem ipsum dolor sit amet", icon: <IconSearch /> },
-  { text: "Сonsecteturadipiscing elit", icon: <IconSearch /> },
-  { text: "Sed do eiusmod tempor", icon: <IconSearch /> },
-  { text: "Esse cillum dolore eu fugiat", icon: <IconSearch /> },
+  { text: "Сonsecteturadipiscing elit", icon: <IconPercent /> },
+  { text: "Sed do eiusmod tempor", icon: <IconFile /> },
+  { text: "Esse cillum dolore eu fugiat", icon: <IconMessage /> },
   {
     text: "Excepteur sint occaecat cupidatat non proident",
-    icon: <IconSearch />,
+    icon: <IconMoney />,
   },
 ];
 
 const Order = () => {
   return (
-    <section className={classes.order}>
+    <section className={classes.order} id="order">
       <div className="container">
-        <header>
+        <header className={classes.header}>
           <h2 className={classes.title}>
             Оформление <span>Заказа</span>
           </h2>
-          <p>Перед заполнением формы ознакомьтесь с нашей схемой работы!</p>
+          <p className={classes.subtitle}>
+            Перед заполнением формы ознакомьтесь с нашей схемой работы!
+          </p>
         </header>
 
         <div className={classes.steps}>
           {STEPS.map((item, index) => {
-            return <div key={index}>{item.text}</div>;
+            return (
+              <div key={index} className={classes.step}>
+                <div className={classes.step_icon}>{item.icon}</div>
+                <div className={classes.step_text}>{item.text}</div>
+              </div>
+            );
           })}
         </div>
+        <Form />
       </div>
     </section>
   );

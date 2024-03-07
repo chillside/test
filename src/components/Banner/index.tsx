@@ -27,7 +27,9 @@ const Banner = () => {
             </ul>
           </div>
           <footer className={classes.buttons}>
-            <Button>заказать</Button>
+            <Button onClick={() => (window.location.href = "/#order")}>
+              заказать
+            </Button>
             <Button variant={"white"}>подробнее</Button>
           </footer>
         </div>
