@@ -7,6 +7,14 @@
   border: 1px solid #fff;
   color: #272733;
 }
+.input {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
 .select_opened {
   background-color: #3d4050;
   color: #fff;

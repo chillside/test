@@ -8,7 +8,7 @@ import IconArrow from "@/assets/icon/arrow.svg?react";
 const Select = ({ ...props }) => {
   const { options, placeholder, name } = props;
 
-  const [value, setValue] = useState<any>(false);
+  const [value, setValue] = useState<any>(null);
   const [opened, setOpened] = useState<boolean>(false);
   const [label, setLabel] = useState<boolean>(
     placeholder || "Выбирите из списка"
@@ -31,7 +31,14 @@ const Select = ({ ...props }) => {
       className={`${classes.select} ${opened ? classes.select_opened : ""}`}
       ref={ref}
     >
-      <input type={"hidden"} name={name} id={name} defaultValue={value} />
+      <input
+        className={classes.input}
+        type="text"
+        name={name}
+        id={name}
+        defaultValue={value}
+        required
+      />
       <div className={classes.value} onClick={() => setOpened(!opened)}>
         {label}
       </div>
