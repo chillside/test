@@ -17,10 +17,10 @@ const Select = ({ ...props }) => {
   const handleClickOutside = () => {
     setOpened(false);
   };
-  const handleSetValue = (name: any) => {
+  const handleSetValue = (v: any, l: any) => {
     setOpened(false);
-    setLabel(name);
-    setValue(name);
+    setLabel(l);
+    setValue(v);
   };
 
   const ref = useRef(null);
@@ -46,9 +46,11 @@ const Select = ({ ...props }) => {
           {options.map((item: any, index: number) => {
             return (
               <div
-                className={classes.option}
+                className={`${classes.option} ${
+                  value === item.value ? classes.option_active : ""
+                }`}
                 key={index}
-                onClick={() => handleSetValue(item.label)}
+                onClick={() => handleSetValue(item.value, item.label)}
               >
                 {item.label}
               </div>
