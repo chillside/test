@@ -1,13 +1,15 @@
 import classes from "./styled.module.scss";
+import { useState } from "react";
 
 const Header = () => {
+  const [opened, setOpened] = useState(false);
   return (
     <header className={classes.header}>
       <div className="container">
         <div className={classes.logo}>
           LoremIpsum.<span>Net</span>
         </div>
-        <nav className={classes.nav}>
+        <nav className={`${classes.nav} ${opened ? classes.nav_opened : ""}`}>
           <a href="#" className={`${classes.nav_item} ${classes.active}`}>
             Бизнес
           </a>
@@ -21,6 +23,18 @@ const Header = () => {
             Оформить заказ
           </a>
         </nav>
+        <button
+          className={classes.menutoggle}
+          onClick={() => setOpened(!opened)}
+        >
+          menu
+        </button>
+        {opened ? (
+          <div
+            className={classes.overlay}
+            onClick={() => setOpened(false)}
+          ></div>
+        ) : null}
       </div>
     </header>
   );

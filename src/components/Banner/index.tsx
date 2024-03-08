@@ -36,7 +36,6 @@ const Banner = () => {
       </div>
 
       <picture className={classes.picture}>
-        <source srcSet={`${imageUrl}.avif`} type="image/avif"></source>
         <source srcSet={`${imageUrl}.webp`} type="image/webp" />
         <source srcSet={`${imageUrl}.jpg`} type="image/jpeg" />
         <img src="img.jpg" alt={"banner alt"} className={classes.img} />

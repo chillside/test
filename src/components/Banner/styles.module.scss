@@ -1,29 +1,53 @@
+@import "@/styles/mixins/breakpoints";
+
 .banner {
   background-color: #fff;
-  min-height: 400px;
   width: 100%;
   position: relative;
   display: flex;
   place-content: center;
-  padding: 200px 0;
+  padding: 100px 0 41px;
   color: #000;
+
+  @include media-breakpoint-up(md) {
+    padding: 150px 0;
+    min-height: 400px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 200px 0;
+  }
 }
 .wrap {
+  width: 100%;
   position: relative;
   z-index: 1;
   display: flex;
-  max-width: 780px;
   flex-wrap: wrap;
+
+  @include media-breakpoint-up(md) {
+    max-width: 780px;
+  }
 }
 .title {
-  font-size: 48px;
+  font-size: 18px;
   font-weight: 800;
-  line-height: 60px;
+  line-height: 140%;
   color: #000;
   font-family: "Raleway", sans-serif;
   width: 100%;
-  margin: 0 0 80px 0;
+  margin: 0 0 20px 0;
   text-transform: uppercase;
+
+  @include media-breakpoint-up(md) {
+    margin: 0 0 60px 0;
+    font-size: 42px;
+    line-height: 140%;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 0 0 80px 0;
+    font-size: 48px;
+    line-height: 60px;
+  }
 
   span {
     color: var(--color-accent);
@@ -37,6 +61,12 @@
 }
 .text_p {
   font-weight: 700;
+  margin-top: 0;
+  font-size: 14px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 20px;
+  }
 }
 .text_ul {
   list-style: none;
@@ -47,6 +77,11 @@
   font-weight: 400;
   padding: 3px 0 3px 26px;
   position: relative;
+  font-size: 14px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 20px;
+  }
 
   &:before {
     content: "";
@@ -73,5 +108,9 @@
 }
 .buttons {
   width: 100%;
-  margin: 80px 0 0 0;
+  margin: 30px 0 0 0;
+
+  @include media-breakpoint-up(md) {
+    margin: 80px 0 0 0;
+  }
 }

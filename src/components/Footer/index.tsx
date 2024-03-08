@@ -26,9 +26,9 @@ const Footer = () => {
     <footer className={classes.footer}>
       <div className="container">
         <div className={classes.copy}>
-          &copy; 2018 «LOERMOPSUM.NET Все права защищены.
+          &copy; 2018 «LOERMOPSUM.NET Все&nbsp;права&nbsp;защищены.
         </div>
-        <div className={classes.border}></div>
+        <div className={`${classes.border} ${classes.firstborder}`}></div>
         <div className={classes.wallets}>
           {WALLET.map((item, index) => {
             return (

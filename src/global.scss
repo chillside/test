@@ -1,3 +1,5 @@
+@import "@/styles/mixins/breakpoints";
+
 :root {
   --color-accent: #43abf0;
   --color-background: rgb(39, 39, 51);
@@ -40,12 +42,19 @@ body {
 }
 .container {
   width: 100%;
-  max-width: 1172px;
+  max-width: 100%;
+  padding: 0 20px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  box-sizing: border-box;
+
+  @include media-breakpoint-up(xl) {
+    max-width: 1172px;
+    padding: 0;
+  }
 }
 
 input[type="range"] {

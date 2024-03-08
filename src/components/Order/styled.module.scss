@@ -1,8 +1,18 @@
+@import "@/styles/mixins/breakpoints";
+
 .order {
   display: flex;
   width: 100%;
   position: relative;
-  padding: 120px 0 150px;
+  padding: 40px 0;
+  flex-wrap: wrap;
+
+  @include media-breakpoint-up(md) {
+    padding: 80px 0;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 120px 0 150px;
+  }
 
   &:before {
     content: "";
@@ -20,36 +30,63 @@
 .header {
   width: 100%;
   text-align: center;
-  margin: 0 0 80px 0;
+  margin: 0 0 40px 0;
+
+  @include media-breakpoint-up(lg) {
+    margin: 0 0 80px 0;
+  }
 }
 .title {
   width: 100%;
-  font-size: 36px;
+  font-size: 18px;
   text-transform: uppercase;
-  margin: 0 0 30px 0;
-  line-height: 44px;
+  margin: 0 0 20px 0;
+  line-height: 140%;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 36px;
+    line-height: 44px;
+    margin: 0 0 30px 0;
+  }
 
   span {
     color: var(--color-accent);
   }
 }
 .subtitle {
-  font-size: 18px;
+  font-size: 14px;
   color: #bbbbbb;
   margin: 0;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+  }
 }
 .steps {
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  overflow: auto;
+
+  @include media-breakpoint-up(md) {
+  }
 }
 .step {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
-  max-width: 200px;
+  max-width: 120px;
+  min-width: 120px;
+  margin: 0;
+  padding: 0 10px;
+
+  @include media-breakpoint-up(md) {
+    max-width: 20%;
+    min-width: 20%;
+    padding: 0;
+  }
 }
 .step_icon {
   width: 100px;
@@ -57,7 +94,7 @@
   min-width: 100px;
   height: 100px;
   border-radius: 200px;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   background-color: #3e9cdc;
   border: 5px solid #286690;
   display: flex;
@@ -65,14 +102,48 @@
   justify-content: center;
   box-sizing: border-box;
 
+  @include media-breakpoint-up(md) {
+    width: 70px;
+    max-width: 70px;
+    min-width: 70px;
+    height: 70px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 100px;
+    max-width: 100px;
+    min-width: 100px;
+    height: 100px;
+    margin: 0 0 20px 0;
+  }
+
   svg {
-    width: 55px;
-    height: 55px;
+    width: 30px;
+    height: 30px;
     float: left;
+
+    @include media-breakpoint-up(lg) {
+      width: 40px;
+      height: 40px;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 55px;
+      height: 55px;
+    }
   }
 }
 .step_text {
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 5px;
   text-align: center;
+  font-size: 12px;
+  word-break: break-word;
+
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 0 10px;
+    font-size: 16px;
+  }
 }

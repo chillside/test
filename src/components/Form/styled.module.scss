@@ -1,16 +1,41 @@
+@import "@/styles/mixins/breakpoints";
+
 .form {
   width: 100%;
-  padding: 80px 0 0 0;
+  padding: 40px 0 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+
+  @include media-breakpoint-up(sm) {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 60px 0 0 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 80px 0 0 0;
+    max-width: none;
+  }
 }
 .grid {
   display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns: 1fr;
+  /* Два ряда */
+  grid-template-rows: 1fr;
+  /* Автоматическое размещение в ряд */
+  grid-auto-flow: row;
   width: 100%;
+  gap: 20px;
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
 }
 .fieldset {
   border: none;
@@ -20,19 +45,27 @@
 }
 .fieldset_slider {
   @extend .fieldset;
-  grid-column: 1 / 3;
-  grid-row: 2;
+
+  @include media-breakpoint-up(lg) {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
 }
 .input {
   width: 100%;
-  padding: 12px 10px;
-  font-size: 18px;
+  padding: 10px 10px;
+  font-size: 14px;
   line-height: 22px;
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.85);
   border: 1px solid #fff;
   color: #272733;
   box-sizing: border-box;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+    padding: 12px 10px;
+  }
 }
 .slider {
   display: flex;
@@ -57,6 +90,16 @@
 }
 .submitwrap {
   padding: 40px 0 0 0;
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    grid-column: 2 / 3;
+    grid-row: 3;
+  }
+
+  button {
+    min-width: 100%;
+  }
 }
 .input_range {
   width: 100%;

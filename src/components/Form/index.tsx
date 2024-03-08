@@ -96,10 +96,10 @@ const Form = () => {
             </button>
           </label>
         </fieldset>
+        <footer className={classes.submitwrap}>
+          <Button type="submit">Отправить</Button>
+        </footer>
       </div>
-      <footer className={classes.submitwrap}>
-        <Button type="submit">Отправить</Button>
-      </footer>
     </form>
   );
 };

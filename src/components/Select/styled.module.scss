@@ -1,3 +1,5 @@
+@import "@/styles/mixins/breakpoints";
+
 .select {
   position: relative;
   padding: 0;
@@ -22,11 +24,16 @@
   border-radius: 3px 3px 0 0;
 }
 .value {
-  padding: 12px 10px;
-  font-size: 18px;
+  padding: 9px 10px;
+  font-size: 14px;
   line-height: 24px;
   user-select: none;
   cursor: pointer;
+
+  @include media-breakpoint-up(lg) {
+    padding: 12px 10px;
+    font-size: 18px;
+  }
 }
 .dropdownlist {
   position: absolute;
@@ -42,10 +49,15 @@
   overflow: auto;
 }
 .option {
-  padding: 7px 0;
-  font-size: 18px;
+  padding: 5px 0;
+  font-size: 14px;
   cursor: pointer;
   user-select: none;
+
+  @include media-breakpoint-up(lg) {
+    padding: 7px 0;
+    font-size: 18px;
+  }
 }
 .option_active {
   color: #42a9ed;

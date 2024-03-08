@@ -31,17 +31,18 @@ const Order = () => {
             Перед заполнением формы ознакомьтесь с нашей схемой работы!
           </p>
         </header>
-
-        <div className={classes.steps}>
-          {STEPS.map((item, index) => {
-            return (
-              <div key={index} className={classes.step}>
-                <div className={classes.step_icon}>{item.icon}</div>
-                <div className={classes.step_text}>{item.text}</div>
-              </div>
-            );
-          })}
-        </div>
+      </div>
+      <div className={classes.steps}>
+        {STEPS.map((item, index) => {
+          return (
+            <div key={index} className={classes.step}>
+              <div className={classes.step_icon}>{item.icon}</div>
+              <div className={classes.step_text}>{item.text}</div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="container">
         <Form />
       </div>
     </section>
