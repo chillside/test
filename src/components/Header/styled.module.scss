@@ -70,6 +70,7 @@ $color: var(--color-background);
   font-weight: 600;
   color: #fff;
   margin: 20px 0 0 0;
+  cursor: pointer;
 
   @include media-breakpoint-up(md) {
     font-size: 12px;
@@ -88,9 +89,32 @@ $color: var(--color-background);
   color: var(--color-accent);
 }
 .menutoggle {
+  position: relative;
+  z-index: 4;
+  border: none;
+  background: none;
+  display: flex;
+  transition: all 0.4s;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: #fff;
+    margin: 0 3px;
+  }
   @include media-breakpoint-up(md) {
     display: none;
   }
+}
+.menutoggle_opened {
+  transform: rotate(90deg);
 }
 .overlay {
   position: fixed;

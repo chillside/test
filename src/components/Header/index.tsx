@@ -3,6 +3,13 @@ import { useState } from "react";
 
 const Header = () => {
   const [opened, setOpened] = useState(false);
+
+  const handleMenuClick = (h: any) => {
+    setOpened(!opened);
+    if (window) {
+      window.location.href = h;
+    }
+  };
   return (
     <header className={classes.header}>
       <div className="container">
@@ -10,24 +17,40 @@ const Header = () => {
           LoremIpsum.<span>Net</span>
         </div>
         <nav className={`${classes.nav} ${opened ? classes.nav_opened : ""}`}>
-          <a href="#" className={`${classes.nav_item} ${classes.active}`}>
+          <div
+            onClick={() => handleMenuClick("#")}
+            className={`${classes.nav_item} ${classes.active}`}
+          >
             Бизнес
-          </a>
-          <a href="#" className={classes.nav_item}>
+          </div>
+          <div
+            className={classes.nav_item}
+            onClick={() => handleMenuClick("#")}
+          >
             О нас
-          </a>
-          <a href="#" className={classes.nav_item}>
+          </div>
+          <div
+            className={classes.nav_item}
+            onClick={() => handleMenuClick("#")}
+          >
             Цены
-          </a>
-          <a href="#order" className={classes.nav_item}>
+          </div>
+          <div
+            onClick={() => handleMenuClick("#order")}
+            className={classes.nav_item}
+          >
             Оформить заказ
-          </a>
+          </div>
         </nav>
         <button
-          className={classes.menutoggle}
+          className={`${classes.menutoggle} ${
+            opened ? classes.menutoggle_opened : ""
+          }`}
           onClick={() => setOpened(!opened)}
         >
-          menu
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
         {opened ? (
           <div
