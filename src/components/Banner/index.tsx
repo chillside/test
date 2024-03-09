@@ -34,11 +34,33 @@ const Banner = () => {
           </footer>
         </div>
       </div>
-
       <picture className={classes.picture}>
-        <source srcSet={`${imageUrl}.webp`} type="image/webp" />
-        <source srcSet={`${imageUrl}.jpg`} type="image/jpeg" />
-        <img src="img.jpg" alt={"banner alt"} className={classes.img} />
+        <source
+          media="(max-width: 799px)"
+          srcSet={`${imageUrl}_sm.webp`}
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 800px)"
+          srcSet={`${imageUrl}.webp`}
+          type="image/webp"
+        />
+        <source
+          media="(max-width: 799px)"
+          srcSet={`${imageUrl}_sm.jpg`}
+          type="image/jpeg"
+        />
+        <source
+          media="(min-width: 800px)"
+          srcSet={`${imageUrl}.jpg`}
+          type="image/jpeg"
+        />
+        <img
+          src={`${imageUrl}.jpg`}
+          srcSet={`${imageUrl}_sm.jpg 800px, ${imageUrl}.jpg 1919w`}
+          alt={"banner alt"}
+          className={classes.img}
+        />
       </picture>
     </section>
   );
