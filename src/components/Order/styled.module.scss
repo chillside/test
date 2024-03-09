@@ -68,8 +68,30 @@
   align-items: flex-start;
   justify-content: space-between;
   overflow: auto;
+  position: relative;
 
-  @include media-breakpoint-up(md) {
+  &:after {
+    @include media-breakpoint-up(sm) {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      right: 40px;
+      height: 40px;
+      z-index: -1;
+      background-image: radial-gradient(#c4c4c4 15%, rgba(255, 255, 255, 0) 0%);
+      background-position: 50%;
+      background-size: 30px 30px;
+      background-repeat: repeat-x;
+    }
+    @include media-breakpoint-up(md) {
+      top: 15px;
+      left: 100px;
+      right: 100px;
+    }
+    @include media-breakpoint-up(lg) {
+      top: 30px;
+    }
   }
 }
 .step {
@@ -138,6 +160,7 @@
   text-align: center;
   font-size: 12px;
   word-break: break-word;
+  user-select: none;
 
   @include media-breakpoint-up(md) {
     font-size: 14px;
