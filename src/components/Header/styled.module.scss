@@ -23,6 +23,9 @@ $color: var(--color-background);
   text-transform: uppercase;
   line-height: 40px;
   font-family: "Raleway", sans-serif;
+  position: relative;
+  z-index: 5;
+  user-select: none;
 
   @include media-breakpoint-up(md) {
     font-size: 20px;
