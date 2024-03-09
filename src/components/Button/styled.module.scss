@@ -11,6 +11,7 @@
   border-radius: 4px;
   text-align: center;
   text-transform: uppercase;
+  transition: all 0.4s;
 
   cursor: pointer;
   user-select: none;
@@ -24,6 +25,11 @@
 
   &:last-of-type {
     margin-right: 0;
+  }
+  &:hover {
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
+    color: #fff;
   }
 }
 .white {

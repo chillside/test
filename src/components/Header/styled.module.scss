@@ -74,6 +74,11 @@ $color: var(--color-background);
   color: #fff;
   margin: 20px 0 0 0;
   cursor: pointer;
+  transition: all 0.4s;
+
+  &:hover {
+    color: var(--color-orange);
+  }
 
   @include media-breakpoint-up(md) {
     font-size: 12px;
@@ -104,6 +109,7 @@ $color: var(--color-background);
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  user-select: none;
   span {
     display: inline-block;
     width: 5px;
@@ -118,6 +124,10 @@ $color: var(--color-background);
 }
 .menutoggle_opened {
   transform: rotate(90deg);
+
+  span {
+    background: var(--color-orange);
+  }
 }
 .overlay {
   position: fixed;

@@ -57,6 +57,11 @@
   margin: 0 20px;
   line-height: 140%;
   text-align: center;
+  transition: all 0.4s;
+
+  &:hover {
+    color: var(--color-orange);
+  }
 
   @include media-breakpoint-up(lg) {
     font-size: 13px;
